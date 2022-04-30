@@ -8,7 +8,9 @@ const Home: NextPage = () => {
   return (
     <Layout className="flex flex-col justify-center items-center">
       <Navbar />
-      <Updates />
+      <div className="w-full flex h-24 justify-center items-center">
+        <Updates />
+      </div>
       <FirstHome />
     </Layout>
   )

@@ -24,7 +24,7 @@ export default function Button({
 }: ButtonProps & Wrapper) {
   return (
     <button
-      className={`bg-primary-500 w-fit text-white rounded-lg px-4 py-2 font-bold disabled:opacity-60 ${className}`}
+      className={`bg-primary-500 hover:bg-primary-700 w-fit text-white rounded-lg px-4 py-2 font-bold disabled:opacity-60 ${className}`}
       onClick={() => onClick()}
       disabled={disabled}
     >
