@@ -10,7 +10,8 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<IVersion>
 ) {
-  res
-    .status(200)
-    .json({ version: '1.5', label: 'כוללת את פיצר "לפי חדר", תמיכה מלאה בPWA' })
+  res.status(200).json({
+    version: '1.0',
+    label: 'גרסה יציבה ראשונה עם המערכת שלי, מערכת מורה ועוד',
+  })
 }
