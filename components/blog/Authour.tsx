@@ -2,7 +2,7 @@ import { IAuthour } from './Head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Authour(authour: IAuthour) {
+export default function PostAuthour(authour: IAuthour) {
   return (
     <div className="flex gap-2">
       <Image

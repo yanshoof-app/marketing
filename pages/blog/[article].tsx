@@ -1,47 +1,38 @@
-import BlogBody from '../../components/blog/Body'
-import BlogHead from '../../components/blog/Head'
+import PostBody from '../../components/blog/Body'
+import PostHead from '../../components/blog/Head'
 import Layout from '../../components/Layout'
 import Navbar from '../../components/ui/Navbar'
 import { BLOG_POST_EXAMPLE } from '../../samples'
 import { readFileSync } from 'fs'
 import path from 'path'
+import { useRouter } from 'next/router'
 
 const BlogArticale = (props) => {
   return (
-    <Layout className="flex flex-col justify-center items-center">
-      <Navbar />
-      <div>
-        <BlogHead
-          title="Timetable V1.5"
-          publishDate={new Date()}
-          authours={[
-            {
-              name: 'Itay Oshri',
-              username: 'itay36',
-              image:
-                'https://pbs.twimg.com/profile_images/1252531684353998848/6R0-p1Vf_400x400.jpg',
-              link: 'https://www.google.com/search?q=authour&oq=authour&aqs=chrome..69i57j0i10l6j46i10i199i465j0i10l2.1006j0j7&sourceid=chrome&ie=UTF-8',
-            },
-            {
-              name: 'Itay Oshri',
-              username: 'itay36',
-              image:
-                'https://pbs.twimg.com/profile_images/1252531684353998848/6R0-p1Vf_400x400.jpg',
-              link: 'https://www.google.com/search?q=authour&oq=authour&aqs=chrome..69i57j0i10l6j46i10i199i465j0i10l2.1006j0j7&sourceid=chrome&ie=UTF-8',
-            },
-          ]}
-        />
-      </div>
-      <BlogBody body={props.post ? props.post : ''} />
-    </Layout>
+    props.postInfo && (
+      <Layout className="flex flex-col justify-center items-center">
+        <Navbar className="border-b-[1px] border-gray-200" />
+        <div className="flex flex-col w-full max-w-3xl gap-8">
+          <PostHead {...props.postInfo} />
+          <PostBody body={props.post ? props.post : ''} />
+        </div>
+      </Layout>
+    )
   )
 }
 
 export async function getStaticProps({ params }) {
-  const file_path = `${params.article}.md`
-  const postsDirectory = 'public/blog/'
-  const post = readFileSync(path.join(postsDirectory, file_path), 'utf-8')
-  return { props: { post: post } }
+  const article = params.article
+
+  const full_path = `public/blog/posts/${article}`
+
+  const POST = 'post.md'
+  const post_path = path.join(full_path, POST)
+  const post = readFileSync(post_path, 'utf-8')
+
+  const postInfo = require(`/public/blog/posts/${article}/info.json`)
+
+  return { props: { post: post, postInfo: postInfo } }
 }
 
 export async function getStaticPaths() {

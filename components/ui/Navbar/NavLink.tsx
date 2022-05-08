@@ -13,7 +13,11 @@ export default function NavLink({ label, to }: NavLinkProps) {
 
   return (
     <Link href={to} passHref>
-      <p className={`font-bold text-lg  ${active && 'text-primary-500'}`}>
+      <p
+        className={`font-bold text-lg cursor-pointer  ${
+          active && 'text-primary-500'
+        }`}
+      >
         {label}
       </p>
     </Link>
