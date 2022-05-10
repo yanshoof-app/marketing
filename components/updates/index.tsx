@@ -9,6 +9,7 @@ export interface IUpdatesProps {}
 
 export default function Updates() {
   const { version, label } = useUpdates()
+  console.log(label)
   return (
     version && (
       <Link href={`${VERSIONS_PATH}${version}`} passHref>
