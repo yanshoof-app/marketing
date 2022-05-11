@@ -10,8 +10,8 @@ import { useRouter } from 'next/router'
 const BlogArticale = (props) => {
   return (
     props.postInfo && (
-      <Layout className="flex flex-col justify-center items-center">
-        <Navbar className="border-b-[1px] border-gray-200" />
+      <Layout className="flex flex-col justify-center items-center dark:text-white">
+        <Navbar className="border-b-[1px] border-gray-200 dark:border-gray-700" />
         <div className="flex flex-col w-full max-w-3xl gap-8">
           <PostHead {...props.postInfo} />
           <PostBody body={props.post ? props.post : ''} />

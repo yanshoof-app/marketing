@@ -3,7 +3,7 @@ import { H1, H2, H3, Li, P, Ul } from './Overrides'
 
 export default function PostBody({ body }) {
   return (
-    <div>
+    <div className="dark:text-white">
       <Markdown
         options={{
           overrides: {

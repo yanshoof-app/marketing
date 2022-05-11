@@ -13,7 +13,7 @@ export default function PostAuthour(authour: IAuthour) {
         className="rounded-full m-0 p-0"
       />
       <div className="flex flex-col text-right">
-        <p className="font-bold">{authour.name}</p>
+        <p className="font-bold dark:text-white">{authour.name}</p>
         <Link href={authour.link} passHref>
           <a
             className="text-primary-500 text-sm cursor-pointer w-fit font-semibold"

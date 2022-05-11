@@ -19,7 +19,7 @@ export default function Navbar({ className = '' }: { className? }) {
 
   return (
     <nav
-      className={`flex h-16  sticky top-0 justify-center bg-white dark:bg-slate-850 dark:text-white w-full z-50 m-0 p-0 ${className}`}
+      className={`flex h-16 sticky top-0 justify-center bg-white dark:bg-slate-850 dark:text-white w-full z-50 m-0 p-0 ${className}`}
     >
       <div className="flex gap-10 items-center justify-between h-full w-full max-w-5xl">
         <Link href={'/'} passHref>
