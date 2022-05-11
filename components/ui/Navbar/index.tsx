@@ -17,10 +17,10 @@ export default function Navbar({ className = '' }: { className? }) {
     <nav
       className={`flex h-16  sticky top-0 justify-center bg-white w-full z-50 m-0 p-0 ${className}`}
     >
-      <div className="flex gap-10 items-center h-full  w-full max-w-5xl">
+      <div className="flex gap-10 items-center h-full  w-full max-w-5xl opacity-100">
         <Link href={'/'} passHref>
           <a>
-            <Logo className="w-40" active={active} />
+            <Logo className="w-40" variant={'blue'} />
           </a>
         </Link>
         <div className="flex gap-7">
