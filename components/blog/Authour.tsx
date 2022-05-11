@@ -15,10 +15,7 @@ export default function PostAuthour(authour: IAuthour) {
       <div className="flex flex-col text-right">
         <p className="font-bold dark:text-white">{authour.name}</p>
         <Link href={authour.link} passHref>
-          <a
-            className="text-primary-500 text-sm cursor-pointer w-fit font-semibold"
-            href={authour.link}
-          >
+          <a className="text-primary-500 text-sm cursor-pointer w-fit font-semibold">
             {authour.username}@
           </a>
         </Link>
