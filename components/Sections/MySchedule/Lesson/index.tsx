@@ -21,7 +21,7 @@ export default function Lesson({ hour, lesson }: LessonProps) {
     'changes' in lesson ? lesson.changes[0] : undefined
   )
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 text-black">
       <ShadowedWrapper
         color={color}
         className="flex flex-row rounded-3xl gap-[1.6rem] p-[1.6rem] items-center justify-stretch overflow-hidden"
@@ -33,7 +33,7 @@ export default function Lesson({ hour, lesson }: LessonProps) {
           <LessonInfo {...lesson} />
           {modificationMessage && (
             <p
-              className={` mb-[-0.92rem] mt-[-0.92rem] font-bold ${changeTextColor(
+              className={` mb-[-0.92rem] mt-[-0.92rem] font-bold text-[32px] ${changeTextColor(
                 color
               )}`}
             >
