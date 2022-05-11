@@ -7,7 +7,7 @@ import {
   LightBulb,
   List,
   Room,
-} from '../icons'
+} from '../../icons'
 import Feature, { IFeature } from './Feature'
 
 const features: IFeature[] = [

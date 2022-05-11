@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import Layout from '../components/Layout'
-import FirstHome from '../components/home/First'
+import FirstHome from '../components/Sections/First'
 import Navbar from '../components/ui/Navbar'
 import Updates from '../components/updates'
-import TeacherSchedule from '../components/home/TeacherSchedule'
-import Features from '../components/home/Features'
+import TeacherSchedule from '../components/Sections/TeacherSchedule'
+import Features from '../components/Sections/Features'
 
 const Home: NextPage = () => {
   return (

@@ -1,4 +1,4 @@
-import { Icon } from '../icons/svgFactory'
+import { Icon } from '../../icons/svgFactory'
 
 export interface IFeature {
   name: string
