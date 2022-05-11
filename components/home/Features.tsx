@@ -1,4 +1,13 @@
-import { Calendar, Clock, Edit, Filter, LightBulb, List, Room } from '../icons'
+import {
+  Calendar,
+  Clock,
+  DarkMode,
+  Edit,
+  Filter,
+  LightBulb,
+  List,
+  Room,
+} from '../icons'
 import Feature, { IFeature } from './Feature'
 
 const features: IFeature[] = [
@@ -45,7 +54,7 @@ const features: IFeature[] = [
   {
     name: 'מצב כהה',
     description: 'מתאים לשימוש בחושך',
-    icon: Edit,
+    icon: DarkMode,
   },
 ]
 
