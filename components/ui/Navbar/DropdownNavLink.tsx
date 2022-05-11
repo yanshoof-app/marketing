@@ -1,0 +1,33 @@
+import NavLink, { NavLinkProps } from './NavLink'
+import Link from 'next/link'
+
+export const variants = {
+  default: 'bg-white dark:bg-slate-850 border-gray-200 dark:border-gray-700',
+  alwaysDark: 'bg-slate-850 border-gray-700',
+}
+
+export type Variant = keyof typeof variants
+
+export default function DropdownNavLink({
+  navLinks,
+  variant = 'default',
+}: {
+  navLinks: NavLinkProps[]
+  variant: Variant
+}) {
+  return (
+    <div
+      className={`flex flex-col absolute top-14 w-36 ${variants[variant]} border-[2px] rounded-lg overflow-hidden shadow-md`}
+    >
+      {navLinks.map((navLink, index) => (
+        <Link href={navLink.to} passHref key={index}>
+          <a key={index} className="w-full px-3 py-1 hover:text-primary-500">
+            <p className={`font-semibold text-md cursor-pointer w-full`}>
+              {navLink.label}
+            </p>
+          </a>
+        </Link>
+      ))}
+    </div>
+  )
+}

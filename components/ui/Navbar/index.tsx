@@ -6,6 +6,8 @@ import { DarkMode } from '../../icons'
 import Logo from '../../Logo'
 import { useTheme } from '../../ThemeProvider'
 import DarkModeToggle from './DarkModeToggle'
+import DropdownNavLink from './DropdownNavLink'
+import MultipleNavLinks from './MultipleNavLinks'
 import NavLink from './NavLink'
 
 const FEATURES = 'תכונות'
@@ -34,6 +36,15 @@ export default function Navbar({ className = '' }: { className? }) {
           <NavLink to="/features" label={FEATURES} />
           <NavLink to="/whatsnew" label={WHATS_NEW} />
           <NavLink to="/about" label={ABOUT} />
+          <MultipleNavLinks
+            label="שחף"
+            navLinks={[
+              { label: '1', to: '/asd' },
+              { label: '2', to: '/asd' },
+              { label: '3', to: '/asd' },
+            ]}
+            variant={active ? 'alwaysDark' : 'default'}
+          />
         </div>
         <div>
           <DarkModeToggle variant={active ? 'white' : 'black'} />
