@@ -1,5 +1,6 @@
 import NavLink, { NavLinkProps } from './NavLink'
 import Link from 'next/link'
+import { MutableRefObject } from 'react'
 
 export const variants = {
   default: 'bg-white dark:bg-slate-850 border-gray-200 dark:border-gray-700',
@@ -24,13 +25,18 @@ export default function DropdownNavLink({
       onMouseLeave={() => setOpen(false)}
     >
       {navLinks.map((navLink, index) => (
-        <Link href={navLink.to} passHref key={index}>
+        <button
+          key={index}
+          onClick={() =>
+            (navLink.to as MutableRefObject<undefined>).current.scrollIntoView()
+          }
+        >
           <a key={index} className="w-full px-3 py-1 hover:text-primary-500">
             <p className={`font-semibold text-md cursor-pointer w-full`}>
               {navLink.label}
             </p>
           </a>
-        </Link>
+        </button>
       ))}
     </div>
   )

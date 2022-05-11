@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import { DarkMode } from '../../icons'
 import Logo from '../../Logo'
+import { useRefs } from '../../RefsProvider'
 import { useTheme } from '../../ThemeProvider'
 import DarkModeToggle from './DarkModeToggle'
 import DropdownNavLink from './DropdownNavLink'
@@ -18,6 +19,7 @@ export default function Navbar({ className = '' }: { className? }) {
   const router = useRouter()
   const active = useMemo(() => router.pathname == '/', [router.pathname])
   const { theme } = useTheme()
+  const { mySchedule } = useRefs()
 
   return (
     <nav
@@ -36,8 +38,8 @@ export default function Navbar({ className = '' }: { className? }) {
           <MultipleNavLinks
             label="תכונות"
             navLinks={[
-              { label: 'מערכת שלי', to: '/myschedule' },
-              { label: 'מערכת מורה', to: '/teacherschedule' },
+              { label: 'מערכת שלי', to: mySchedule },
+              { label: 'מערכת מורה', to: mySchedule },
             ]}
             variant={active ? 'alwaysDark' : 'default'}
           />

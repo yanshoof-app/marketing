@@ -3,14 +3,17 @@ import type { AppProps } from 'next/app'
 import Footer from '../components/ui/Footer'
 import { FooterWrapper } from '../components/ui/Footer/FooterWrapper'
 import ThemeProvider from '../components/ThemeProvider'
+import RefsProvider from '../components/RefsProvider'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider>
-      <FooterWrapper>
-        <Component {...pageProps} />
-      </FooterWrapper>
-    </ThemeProvider>
+    <RefsProvider>
+      <ThemeProvider>
+        <FooterWrapper>
+          <Component {...pageProps} />
+        </FooterWrapper>
+      </ThemeProvider>
+    </RefsProvider>
   )
 }
 

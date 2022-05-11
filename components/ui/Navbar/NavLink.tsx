@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useMemo } from 'react'
+import { MutableRefObject, useMemo } from 'react'
 
 export interface NavLinkProps {
   label: string
-  to: string
+  to: string | MutableRefObject<undefined>
 }
 
 export default function NavLink({ label, to }: NavLinkProps) {
@@ -12,7 +12,7 @@ export default function NavLink({ label, to }: NavLinkProps) {
   const active = useMemo(() => router.pathname == to, [router.pathname, to])
 
   return (
-    <Link href={to} passHref>
+    <Link href={to as string} passHref>
       <a
         className={`font-bold text-lg cursor-pointer ${
           active ? ' text-primary-500' : ''
