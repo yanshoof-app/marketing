@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import { DarkMode } from '../../icons'
 import Logo from '../../Logo'
+import { useTheme } from '../../ThemeProvider'
 import DarkModeToggle from './DarkModeToggle'
 import NavLink from './NavLink'
 
@@ -14,15 +15,19 @@ const ABOUT = 'אודות'
 export default function Navbar({ className = '' }: { className? }) {
   const router = useRouter()
   const active = useMemo(() => router.pathname == '/', [router.pathname])
+  const { theme } = useTheme()
 
   return (
     <nav
-      className={`flex h-16  sticky top-0 justify-center bg-white w-full z-50 m-0 p-0 ${className}`}
+      className={`flex h-16  sticky top-0 justify-center bg-white dark:bg-slate-850 dark:text-white w-full z-50 m-0 p-0 ${className}`}
     >
       <div className="flex gap-10 items-center justify-between h-full w-full max-w-5xl">
         <Link href={'/'} passHref>
           <a>
-            <Logo className="w-40" variant={active ? 'white' : 'black'} />
+            <Logo
+              className="w-40"
+              variant={active || theme === 'dark' ? 'white' : 'black'}
+            />
           </a>
         </Link>
         <div className="flex gap-7">
@@ -31,7 +36,7 @@ export default function Navbar({ className = '' }: { className? }) {
           <NavLink to="/about" label={ABOUT} />
         </div>
         <div>
-          <DarkModeToggle />
+          <DarkModeToggle variant={active ? 'white' : 'black'} />
         </div>
       </div>
     </nav>
