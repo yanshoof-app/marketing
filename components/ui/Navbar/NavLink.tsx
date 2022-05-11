@@ -4,7 +4,7 @@ import { MutableRefObject, useMemo } from 'react'
 
 export interface NavLinkProps {
   label: string
-  to: string | MutableRefObject<undefined>
+  to: string
 }
 
 export default function NavLink({ label, to }: NavLinkProps) {

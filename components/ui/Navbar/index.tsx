@@ -7,7 +7,6 @@ import Logo from '../../Logo'
 import { useRefs } from '../../RefsProvider'
 import { useTheme } from '../../ThemeProvider'
 import DarkModeToggle from './DarkModeToggle'
-import DropdownNavLink from './DropdownNavLink'
 import MultipleNavLinks from './MultipleNavLinks'
 import NavLink from './NavLink'
 
@@ -38,8 +37,14 @@ export default function Navbar({ className = '' }: { className? }) {
           <MultipleNavLinks
             label="תכונות"
             navLinks={[
-              { label: 'מערכת שלי', to: mySchedule },
-              { label: 'מערכת מורה', to: mySchedule },
+              {
+                label: 'מערכת שלי',
+                to: { ref: active ? mySchedule : null, link: '/' },
+              },
+              {
+                label: 'מערכת מורה',
+                to: { ref: active ? mySchedule : null, link: '/' },
+              },
             ]}
             variant={active ? 'alwaysDark' : 'default'}
           />

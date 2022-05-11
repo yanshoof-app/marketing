@@ -1,6 +1,8 @@
 import NavLink, { NavLinkProps } from './NavLink'
 import Link from 'next/link'
-import { MutableRefObject } from 'react'
+import { MutableRefObject, useMemo } from 'react'
+import { MultipleNavLinkProps } from './MultipleNavLinks'
+import { useRouter } from 'next/router'
 
 export const variants = {
   default: 'bg-white dark:bg-slate-850 border-gray-200 dark:border-gray-700',
@@ -15,29 +17,40 @@ export default function DropdownNavLink({
   variant = 'default',
   setOpen,
 }: {
-  navLinks: NavLinkProps[]
+  navLinks: MultipleNavLinkProps[]
   variant: Variant
   setOpen(boolean): unknown
 }) {
+  const router = useRouter()
+
   return (
     <div
       className={`flex flex-col absolute top-14 w-36 ${variants[variant]} border-[2px] rounded-lg overflow-hidden shadow-md`}
       onMouseLeave={() => setOpen(false)}
     >
       {navLinks.map((navLink, index) => (
-        <button
-          key={index}
-          onClick={() =>
-            (navLink.to as MutableRefObject<undefined>).current.scrollIntoView()
-          }
-        >
-          <a key={index} className="w-full px-3 py-1 hover:text-primary-500">
-            <p className={`font-semibold text-md cursor-pointer w-full`}>
-              {navLink.label}
-            </p>
-          </a>
-        </button>
+        <ClickableNavLink {...navLink} key={index} />
       ))}
     </div>
+  )
+}
+
+export function ClickableNavLink({ label, to }: MultipleNavLinkProps) {
+  const router = useRouter()
+  const active = router.pathname === to.link
+
+  return active ? (
+    <a
+      className="w-full px-3 py-2 hover:text-primary-500"
+      onClick={() => to.ref.current.scrollIntoView()}
+    >
+      <p className={`font-semibold text-md cursor-pointer w-full`}>{label}</p>
+    </a>
+  ) : (
+    <Link href={to.link} passHref>
+      <a className="w-full px-3 py-2 hover:text-primary-500">
+        <p className={`font-semibold text-md cursor-pointer w-full`}>{label}</p>
+      </a>
+    </Link>
   )
 }
