@@ -3,7 +3,8 @@ import Link from 'next/link'
 
 export const variants = {
   default: 'bg-white dark:bg-slate-850 border-gray-200 dark:border-gray-700',
-  alwaysDark: 'bg-slate-850 border-gray-700',
+  alwaysDark:
+    'bg-white dark:bg-slate-850 border-gray-300 dark:border-gray-700 text-black dark:text-white',
 }
 
 export type Variant = keyof typeof variants
