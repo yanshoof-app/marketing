@@ -1,5 +1,5 @@
-import { Context, Dispatch, SetStateAction, useContext } from 'react'
-import { createContext, useLayoutEffect } from 'react'
+import { Context, Dispatch, SetStateAction, useContext, useEffect } from 'react'
+import { createContext } from 'react'
 import useDarkMode, { Theme } from '../hooks/useDarkMode'
 import { Wrapper } from './types'
 
@@ -20,7 +20,7 @@ export const useTheme = createUseContextHook(StorageContext)
 
 export default function ThemeProvider({ children }: Wrapper) {
   const { isDarkMode, setTheme, theme } = useDarkMode()
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (isDarkMode) document.documentElement.classList.add('dark')
     else document.documentElement.classList.remove('dark')
   }, [isDarkMode])

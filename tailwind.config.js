@@ -13,6 +13,10 @@ module.exports = {
       tinos: ['"Tinos"', 'sans-serif'],
     },
     extend: {
+      boxShadow: {
+        theme: '8px 8px 0 0',
+      },
+
       colors: {
         primary: colors.sky,
         gray: colors.gray,

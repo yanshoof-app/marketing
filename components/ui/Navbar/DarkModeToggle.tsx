@@ -1,6 +1,5 @@
-import { useMemo } from 'react'
 import { DarkMode, LightMode } from '../../icons'
-import ThemeProvider, { useTheme } from '../../ThemeProvider'
+import { useTheme } from '../../ThemeProvider'
 
 export const variants = {
   white: 'text-white/50 hover:text-white',
@@ -27,7 +26,6 @@ export default function DarkModeToggle({
     ) : (
       <LightMode {...iconParams} />
     )
-  console.log(Icon)
   return (
     <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
       {Icon}
