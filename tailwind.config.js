@@ -5,10 +5,12 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
+  darkMode: 'class',
   theme: {
     fontFamily: {
       sans: ['"Assistant"', 'sans-serif'], // make assistant the default font
       roboto: ['"Roboto"', 'sans-serif'],
+      tinos: ['"Tinos"', 'sans-serif'],
     },
     extend: {
       colors: {

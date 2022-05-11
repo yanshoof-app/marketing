@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <div className="flex flex-col w-full justify-between bg-primary-600 py-8 px-20 gap-8">
       <div className="w-full flex justify-between gap-5">
-        <div className="text-white">
+        <div className="text-white hover:text-white/50">
           <Link href={GITHUB_LINK} passHref>
             <a>
               <GitHub width={30} height={30} />
@@ -19,7 +19,7 @@ export default function Footer() {
         <p className=" text-lg text-white font-roboto">{YANSHOOF_2022}</p>
       </div>
       <div className="border-t-[1px] pb-3 pt-8">
-        <Logo variant={'white'} className="w-56" />
+        <Logo variant={'white'} className="w-48" />
       </div>
     </div>
   )
