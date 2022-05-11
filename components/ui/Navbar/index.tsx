@@ -33,18 +33,17 @@ export default function Navbar({ className = '' }: { className? }) {
           </a>
         </Link>
         <div className="flex gap-7">
-          <NavLink to="/features" label={FEATURES} />
-          <NavLink to="/whatsnew" label={WHATS_NEW} />
-          <NavLink to="/about" label={ABOUT} />
           <MultipleNavLinks
-            label="שחף"
+            label="תכונות"
             navLinks={[
-              { label: '1', to: '/asd' },
-              { label: '2', to: '/asd' },
-              { label: '3', to: '/asd' },
+              { label: 'מערכת שלי', to: '/myschedule' },
+              { label: 'מערכת מורה', to: '/teacherschedule' },
             ]}
             variant={active ? 'alwaysDark' : 'default'}
           />
+          <NavLink to="/features" label={FEATURES} />
+          <NavLink to="/whatsnew" label={WHATS_NEW} />
+          <NavLink to="/about" label={ABOUT} />
         </div>
         <div>
           <DarkModeToggle variant={active ? 'white' : 'black'} />

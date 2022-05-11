@@ -14,7 +14,7 @@ export default function Feature({
   label = '',
 }: IFeature) {
   return (
-    <div className="flex flex-col items-center w-64 justify-start text-center gap-2 text-white pb-16">
+    <div className="flex flex-col items-center w-64 justify-start text-center gap-2 dark:text-white pb-16">
       <p className="text-primary-500">
         <Icon width={44} height={44} />
       </p>
@@ -22,7 +22,7 @@ export default function Feature({
         <div className="flex items-center">
           <h1 className="font-bold text-xl">{name}</h1>
           {label && (
-            <span className="bg-primary-700 rounded-[5px] relative right-2 px-[7px] pt-[1px] h-[22px] text-[13px] font-bold select-none">
+            <span className="bg-primary-500 dark:bg-primary-700 text-white rounded-[5px] relative right-2 px-[7px] pt-[1px] h-[22px] text-[13px] font-bold select-none">
               {label}
             </span>
           )}

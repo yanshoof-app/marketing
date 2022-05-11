@@ -5,6 +5,7 @@ import Navbar from '../components/ui/Navbar'
 import Updates from '../components/updates'
 import TeacherSchedule from '../components/Sections/TeacherSchedule'
 import Features from '../components/Sections/Features'
+import MySchedule from '../components/Sections/MySchedule'
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
       </div>
       <FirstHome />
       <Features />
+      <MySchedule />
     </Layout>
   )
 }

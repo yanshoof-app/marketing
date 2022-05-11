@@ -62,10 +62,12 @@ const TITLE_TEXT = "עם פיצ'רים מיוחדים"
 
 export default function Features() {
   return (
-    <div className="flex flex-col items-center w-full bg-slate-850 text-white gap-20 py-40">
+    <div className="flex flex-col items-center w-full dark:bg-slate-850 bg-white gap-20 py-40">
       <div className="flex flex-col items-center gap-4">
-        <h1 className="text-6xl font-extrabold">{TITLE_TEXT}</h1>
-        <h2 className="text-xl font-semibold">
+        <h1 className="text-6xl font-extrabold text-slate-850 dark:text-white">
+          {TITLE_TEXT}
+        </h1>
+        <h2 className="text-xl font-semibold text-slate-850 dark:text-white">
           <a className="font-roboto text-primary-500">timetable</a> כולל מספר
           פיצ׳רים המאפשרים נוחות, התאמה אישית ויכולות חדשות
         </h2>
