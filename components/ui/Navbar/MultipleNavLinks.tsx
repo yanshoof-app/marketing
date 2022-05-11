@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Expand } from '../../icons'
 import DropdownNavLink, { Variant } from './DropdownNavLink'
 import { NavLinkProps } from './NavLink'
 
@@ -13,8 +14,11 @@ export default function MultipleNavLinks({
 }) {
   const [opened, setOpen] = useState(false)
   return (
-    <div className="flex" onMouseOver={() => setOpen(true)}>
-      <a className={`font-bold text-lg cursor-pointer`}>{label}</a>
+    <div
+      className="flex items-center cursor-pointer"
+      onMouseOver={() => setOpen(true)}
+    >
+      <a className={`font-bold text-lg`}>{label}</a>
       {opened && (
         <DropdownNavLink
           navLinks={navLinks}
@@ -22,6 +26,7 @@ export default function MultipleNavLinks({
           setOpen={setOpen}
         />
       )}
+      <Expand width={24} height={24} />
     </div>
   )
 }
