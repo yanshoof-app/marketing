@@ -11,7 +11,7 @@ import MultipleNavLinks from './MultipleNavLinks'
 import NavLink from './NavLink'
 
 const FEATURES = 'תכונות'
-const WHATS_NEW = 'מה חדש'
+const BLOG = 'בלוג'
 const ABOUT = 'אודות'
 
 export default function Navbar({ className = '' }: { className? }) {
@@ -35,7 +35,7 @@ export default function Navbar({ className = '' }: { className? }) {
         </Link>
         <div className="flex gap-7">
           <MultipleNavLinks
-            label="תכונות"
+            label={FEATURES}
             navLinks={[
               {
                 label: 'מערכת שלי',
@@ -48,8 +48,7 @@ export default function Navbar({ className = '' }: { className? }) {
             ]}
             variant={active ? 'alwaysDark' : 'default'}
           />
-          <NavLink to="/features" label={FEATURES} />
-          <NavLink to="/whatsnew" label={WHATS_NEW} />
+          <NavLink to="/blog/timetable-1.0" label={BLOG} />
           <NavLink to="/about" label={ABOUT} />
         </div>
         <div>

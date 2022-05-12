@@ -12,6 +12,15 @@ const nextConfig = {
 
     return config
   },
+  async redirects() {
+    return [
+      {
+        source: '/blog',
+        destination: '/blog/timetable-1.0',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
