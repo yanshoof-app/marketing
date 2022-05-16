@@ -5,7 +5,7 @@ import { NavLinkProps } from './NavLink'
 
 export interface MultipleNavLinkProps {
   label: string
-  to: { ref: MutableRefObject<undefined>; link: string }
+  to: { ref: MutableRefObject<HTMLElement>; link: string }
 }
 
 export default function MultipleNavLinks({
