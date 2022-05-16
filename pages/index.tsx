@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import Layout from '../components/Layout'
 import FirstHome from '../components/Sections/First'
 import Navbar from '../components/ui/Navbar'
@@ -7,6 +7,7 @@ import TeacherSchedule from '../components/Sections/TeacherSchedule'
 import Features from '../components/Sections/Features'
 import MySchedule from '../components/Sections/MySchedule'
 import { useRef } from 'react'
+import { buildTitleGetStaticProps } from '../components/DocumentHead'
 
 const Home: NextPage = () => {
   return (
@@ -21,5 +22,8 @@ const Home: NextPage = () => {
     </Layout>
   )
 }
+
+export const getStaticProps: GetStaticProps =
+  buildTitleGetStaticProps('Yanshoof')
 
 export default Home

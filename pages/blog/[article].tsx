@@ -30,7 +30,7 @@ export async function getStaticProps({ params }) {
 
   const postInfo = require(`/public/blogPosts/posts/${article}/info.json`)
 
-  return { props: { post: post, postInfo: postInfo } }
+  return { props: { post: post, postInfo: postInfo, title: postInfo.title } }
 }
 
 export async function getStaticPaths() {

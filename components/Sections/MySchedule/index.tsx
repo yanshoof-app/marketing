@@ -1,6 +1,8 @@
 import { ILesson } from '@yanshoof/types'
+import { GetStaticProps } from 'next'
 import { useState } from 'react'
 import { timetable_example } from '../../../samples'
+import { buildTitleGetStaticProps } from '../../DocumentHead'
 import { Calendar } from '../../icons'
 import { useRefs } from '../../RefsProvider'
 import DayPick from './DayPick'
