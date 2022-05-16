@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { Wrapper } from './types'
 
 const previewImagePath = '/og_image.png'
-const defaultDescription = 'מערכת השעות. עם השיעורים שלכם.'
+const defaultDescription = 'מערכת השעות שלכם. עם השיעורים שלכם.'
 
 export interface IDocumentHeadProps extends Wrapper {
   pageTitle?: string
