@@ -12,14 +12,16 @@ export default function Updates() {
   return (
     version && (
       <Link href={`${VERSIONS_PATH}${version}`} passHref>
-        <a className="flex items-center h-12 bg-primary-500 hover:bg-primary-900 duration-75 rounded-xl px-4 text-white gap-2 cursor-pointer select-none">
+        <a className="flex sm:flex-row flex-col items-start sm:items-center sm:h-12 h-fit bg-primary-500 hover:bg-primary-900 duration-75 rounded-xl sm:py-0 py-2 sm:px-4 px-3 text-white sm:gap-2 cursor-pointer select-none">
           <p className="font-bold text-sm">{NEW}</p>
-          <div className="flex">
+          <div className="flex sm:justify-start items-center">
             <p>
               <span className="font-bold text-sm font-roboto">V{version}:</span>{' '}
               <span>{label}</span>
             </p>
-            <ForwardRTL width={18} />
+            <div className="hidden sm:block">
+              <ForwardRTL width={18} />
+            </div>
           </div>
         </a>
       </Link>

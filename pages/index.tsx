@@ -9,11 +9,10 @@ import MySchedule from '../components/Sections/MySchedule'
 import { useRef } from 'react'
 
 const Home: NextPage = () => {
-
   return (
     <Layout className="flex flex-col justify-center items-center bg-primary-700">
       <Navbar className=" text-white !bg-primary-700/90 backdrop-blur-sm" />
-      <div className="w-full flex h-24 justify-center items-center">
+      <div className="w-full flex sm:px-0 px-5 h-24 justify-center items-center">
         <Updates />
       </div>
       <FirstHome />

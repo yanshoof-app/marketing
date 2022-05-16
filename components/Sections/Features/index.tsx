@@ -62,17 +62,17 @@ const TITLE_TEXT = "עם פיצ'רים מיוחדים"
 
 export default function Features() {
   return (
-    <div className="flex flex-col items-center w-full dark:bg-slate-850 bg-white gap-20 py-40">
-      <div className="flex flex-col items-center gap-4">
-        <h1 className="text-6xl font-extrabold text-slate-850 dark:text-white">
+    <div className="flex flex-col items-center w-full dark:bg-slate-850 bg-white sm:gap-20 gap-16 sm:py-40 py-16">
+      <div className="flex flex-col sm:text-right text-center items-center sm:gap-4 gap-3">
+        <h1 className="sm:text-6xl text-4xl font-extrabold text-slate-850 dark:text-white">
           {TITLE_TEXT}
         </h1>
-        <h2 className="text-xl font-semibold text-slate-850 dark:text-white">
+        <h2 className="sm:text-xl text-md sm:px-0 px-8 font-semibold text-slate-850 dark:text-white">
           <a className="font-roboto text-primary-500">timetable</a> כולל מספר
           פיצ׳רים המאפשרים נוחות, התאמה אישית ויכולות חדשות
         </h2>
       </div>
-      <div className="flex gap-6 max-w-6xl flex-wrap justify-center">
+      <div className="flex sm:gap-6 gap-2 max-w-6xl flex-wrap justify-center">
         {features.map((feature, index) => (
           <Feature {...feature} key={index} />
         ))}

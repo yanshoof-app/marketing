@@ -3,8 +3,11 @@ import { timetable_example } from '../../../samples'
 import { Calendar } from '../../icons'
 import { useRefs } from '../../RefsProvider'
 import DayPick from './DayPick'
-import Lesson from './Lesson'
 import Timetable from './Timetable'
+
+const MY_SCHEDULE = 'המערכת שלי'
+const DESCRIPTION =
+  'באמצעות מערכת שלי ניתן להגדיר את המערכת שלכם, כך שיוצגו לכם רק השיעורים שלכם וכן גם השינויים שלכם'
 
 export default function MySchedule() {
   const { mySchedule } = useRefs()
@@ -19,9 +22,9 @@ export default function MySchedule() {
         <div className="flex flex-col gap-7 text-primary-500">
           <Calendar width={60} height={60} />
           <div className="flex flex-col items-left gap-4 dark:text-white text-black">
-            <h1 className=" text-6xl font-extrabold">המערכת שלי</h1>
+            <h1 className=" text-6xl font-extrabold">{MY_SCHEDULE}</h1>
             <h2 className=" text-2xl font-semibold dark:text-gray-300">
-              תיאור
+              {DESCRIPTION}
             </h2>
           </div>
         </div>
