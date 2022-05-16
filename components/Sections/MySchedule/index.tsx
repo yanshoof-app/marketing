@@ -1,3 +1,4 @@
+import { ILesson } from '@yanshoof/types'
 import { useState } from 'react'
 import { timetable_example } from '../../../samples'
 import { Calendar } from '../../icons'
@@ -33,7 +34,7 @@ export default function MySchedule() {
         <div className="flex justify-start w-[64rem] -mt-8">
           <div className="flex flex-col gap-4 w-full h-[40rem] overflow-hidden p-2">
             <DayPick day={date} onChange={changeDate} />
-            <Timetable lessons={timetable_example} day={date} />
+            <Timetable lessons={timetable_example as ILesson[][]} day={date} />
           </div>
         </div>
       </div>

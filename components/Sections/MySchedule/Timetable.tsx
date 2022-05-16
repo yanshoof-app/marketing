@@ -1,3 +1,4 @@
+import { ILesson } from '@yanshoof/types'
 import Lesson from './Lesson'
 
 export const MIN_HOUR = 1
@@ -17,7 +18,7 @@ export default function Timetable({
   lessons,
   day,
 }: {
-  lessons: [][]
+  lessons: ILesson[][]
   day: number
 }) {
   const lastLesson = FindLastLesson(lessons[day])
