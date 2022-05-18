@@ -18,7 +18,7 @@ export default function FirstHome() {
             <p>{YOUR_SCHEDULE}</p>
             <p>{WITH_YOUR_LESSONS}</p>
           </div>
-          <div className="sm:text-base text-lg text-slate-300 font-semibold">
+          <div className="sm:text-base sm:max-w-[460px] text-lg text-slate-300 font-semibold">
             <p>{DESCRIPTION}</p>
           </div>
         </div>
