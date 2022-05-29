@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useMemo, useState } from 'react'
-import { DarkMode, Menu } from '../../icons'
+import { Close, DarkMode, Menu } from '../../icons'
 import Logo from '../../Logo'
 import { useRefs } from '../../RefsProvider'
 import { useTheme } from '../../ThemeProvider'
@@ -13,6 +13,7 @@ import NavLink from './NavLink'
 const FEATURES = 'תכונות'
 const BLOG = 'בלוג'
 const ABOUT = 'אודות'
+const MENU_BUTTON_SIZE = 35
 
 export default function Navbar({ className = '' }: { className? }) {
   const router = useRouter()
@@ -28,7 +29,11 @@ export default function Navbar({ className = '' }: { className? }) {
       } ${className}`}
     >
       <button className="sm:hidden block" onClick={() => setOpened(!opened)}>
-        <Menu height={35} width={35} />
+        {opened ? (
+          <Close height={MENU_BUTTON_SIZE} width={MENU_BUTTON_SIZE} />
+        ) : (
+          <Menu height={MENU_BUTTON_SIZE} width={MENU_BUTTON_SIZE} />
+        )}
       </button>
       <div className="flex gap-10 items-center justify-between h-full w-full max-w-5xl">
         <Link href={'/'} passHref>
