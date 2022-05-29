@@ -8,8 +8,8 @@ import path from 'path'
 const BlogArticale = (props) => {
   return (
     props.postInfo && (
-      <Layout className="flex flex-col justify-center items-center dark:text-white">
-        <Navbar className="border-b-[1px] border-gray-200 dark:border-gray-700" />
+      <Layout className="flex flex-col justify-center items-center sm:px-0 px-10 dark:text-white">
+        <Navbar className="sm:border-b-[1px] border-gray-200 dark:border-gray-700" />
         <div className="flex flex-col w-full max-w-3xl gap-8">
           <PostHead {...props.postInfo} />
           <PostBody body={props.post ? props.post : ''} />

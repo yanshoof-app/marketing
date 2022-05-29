@@ -49,12 +49,18 @@ export function ClickableNavLink({ label, to }: MultipleNavLinkProps) {
       className="w-full px-3 py-2 hover:text-primary-500"
       onClick={() => to.ref.current.scrollIntoView()}
     >
-      <p className={`font-semibold text-md cursor-pointer w-full`}>{label}</p>
+      <p className={`sm:font-semibold font-bold text-md cursor-pointer w-full`}>
+        {label}
+      </p>
     </a>
   ) : (
     <Link href={to.link} passHref>
       <a className="w-full px-3 py-2 hover:text-primary-500">
-        <p className={`font-semibold text-md cursor-pointer w-full`}>{label}</p>
+        <p
+          className={`sm:font-semibold font-bold text-md cursor-pointer w-full`}
+        >
+          {label}
+        </p>
       </a>
     </Link>
   )

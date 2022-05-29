@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   return (
     <Layout className="flex flex-col justify-center items-center bg-primary-700">
       <Navbar />
-      <div className="w-full sm:mt-0 mt-20 flex sm:px-0 px-5 h-24 justify-center items-center">
+      <div className="w-full flex sm:px-0 px-5 h-24 justify-center items-center">
         <Updates />
       </div>
       <FirstHome />
