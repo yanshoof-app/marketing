@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useMemo } from 'react'
-import { DarkMode } from '../../icons'
+import { useMemo, useState } from 'react'
+import { DarkMode, Menu } from '../../icons'
 import Logo from '../../Logo'
 import { useRefs } from '../../RefsProvider'
 import { useTheme } from '../../ThemeProvider'
@@ -19,42 +19,56 @@ export default function Navbar({ className = '' }: { className? }) {
   const active = useMemo(() => router.pathname == '/', [router.pathname])
   const { theme } = useTheme()
   const { mySchedule } = useRefs()
+  const [opened, setOpened] = useState(false)
 
   return (
-    <nav
-      className={`flex h-16 sticky top-0 justify-center bg-white dark:bg-slate-850 dark:text-white w-full z-50 m-0 p-0 ${className}`}
-    >
-      <div className="flex gap-10 items-center justify-between h-full w-full max-w-5xl">
-        <Link href={'/'} passHref>
-          <a>
-            <Logo
-              className="w-40"
-              variant={active || theme === 'dark' ? 'white' : 'black'}
+    <>
+      <nav
+        className={`flex sm:h-16 sm:sticky sm:gap-0 gap-3 fixed h-16 top-0 right-0 justify-center items-center bg-white dark:bg-slate-850 dark:text-white sm:w-full w-screen z-50 m-0 sm:p-0 px-6 ${
+          active && 'text-white !bg-primary-700/90 backdrop-blur-sm'
+        } ${className}`}
+      >
+        <button className="sm:hidden block" onClick={() => setOpened(!opened)}>
+          <Menu height={35} width={35} />
+        </button>
+        <div className="flex gap-10 items-center justify-between h-full w-full max-w-5xl">
+          <Link href={'/'} passHref>
+            <a>
+              <Logo
+                className="w-40"
+                variant={active || theme === 'dark' ? 'white' : 'black'}
+              />
+            </a>
+          </Link>
+          <div
+            className={`sm:flex sm:relative absolute sm:top-0 top-16 w-screen h-screen sm:w-auto sm:h-auto right-0 px-6 ${
+              active ? 'bg-primary-700/90 backdrop-blur-sm' : 'bg-white'
+            } sm:!bg-transparent sm:flex-row flex-col gap-7 sm:backdrop-blur-none ${
+              opened ? 'flex' : 'hidden'
+            }`}
+          >
+            <MultipleNavLinks
+              label={FEATURES}
+              navLinks={[
+                {
+                  label: 'מערכת שלי',
+                  to: { ref: active ? mySchedule : null, link: '/' },
+                },
+                {
+                  label: 'מערכת מורה',
+                  to: { ref: active ? mySchedule : null, link: '/' },
+                },
+              ]}
+              variant={active ? 'alwaysDark' : 'default'}
             />
-          </a>
-        </Link>
-        <div className="flex gap-7">
-          <MultipleNavLinks
-            label={FEATURES}
-            navLinks={[
-              {
-                label: 'מערכת שלי',
-                to: { ref: active ? mySchedule : null, link: '/' },
-              },
-              {
-                label: 'מערכת מורה',
-                to: { ref: active ? mySchedule : null, link: '/' },
-              },
-            ]}
-            variant={active ? 'alwaysDark' : 'default'}
-          />
-          <NavLink to="/blog/timetable-1.0" label={BLOG} />
-          <NavLink to="/about" label={ABOUT} />
+            <NavLink to="/blog/timetable-1.0" label={BLOG} />
+            <NavLink to="/about" label={ABOUT} />
+          </div>
+          <div>
+            <DarkModeToggle variant={active ? 'white' : 'black'} />
+          </div>
         </div>
-        <div>
-          <DarkModeToggle variant={active ? 'white' : 'black'} />
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   )
 }

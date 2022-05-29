@@ -20,18 +20,19 @@ export default function MultipleNavLinks({
   const [opened, setOpen] = useState(false)
   return (
     <div
-      className="flex items-center cursor-pointer"
+      className="flex sm:flex-row flex-col sm:items-center items-start cursor-pointer"
       onMouseOver={() => setOpen(true)}
     >
-      <a className={`font-bold text-lg`}>{label}</a>
-      {opened && (
-        <DropdownNavLink
-          navLinks={navLinks}
-          variant={variant}
-          setOpen={setOpen}
-        />
-      )}
-      <Expand width={24} height={24} />
+      <div className="flex items-center">
+        <a className={`font-bold sm:text-lg text-2xl`}>{label}</a>
+        <Expand width={24} height={24} className="sm:block hidden" />
+      </div>
+      <DropdownNavLink
+        navLinks={navLinks}
+        variant={variant}
+        setOpen={setOpen}
+        opened={opened}
+      />
     </div>
   )
 }

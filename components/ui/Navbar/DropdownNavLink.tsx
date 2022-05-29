@@ -5,9 +5,10 @@ import { MultipleNavLinkProps } from './MultipleNavLinks'
 import { useRouter } from 'next/router'
 
 export const variants = {
-  default: 'bg-white dark:bg-slate-850 border-gray-200 dark:border-gray-700',
+  default:
+    'sm:bg-white sm:dark:bg-slate-850 sm:border-gray-200 sm:dark:border-gray-700',
   alwaysDark:
-    'bg-white dark:bg-slate-850 border-gray-300 dark:border-gray-700 text-black dark:text-white',
+    'sm:bg-white sm:dark:bg-slate-850 sm:border-gray-300 sm:dark:border-gray-700 sm:text-black sm:dark:text-white',
 }
 
 export type Variant = keyof typeof variants
@@ -16,16 +17,20 @@ export default function DropdownNavLink({
   navLinks,
   variant = 'default',
   setOpen,
+  opened,
 }: {
   navLinks: MultipleNavLinkProps[]
   variant: Variant
   setOpen(boolean): unknown
+  opened
 }) {
-  const router = useRouter()
-
   return (
     <div
-      className={`flex flex-col absolute top-14 w-36 ${variants[variant]} border-[2px] rounded-lg overflow-hidden shadow-md`}
+      className={`${
+        opened ? 'sm:flex' : 'sm:hidden'
+      } flex flex-col sm:absolute sm:top-10 sm:text-base text-lg w-36 ${
+        variants[variant]
+      } sm:border-[2px] rounded-lg overflow-hidden sm:shadow-md`}
       onMouseLeave={() => setOpen(false)}
     >
       {navLinks.map((navLink, index) => (

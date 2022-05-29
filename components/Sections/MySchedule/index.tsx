@@ -34,14 +34,14 @@ export default function MySchedule() {
           </div>
         </div>
       </div>
-      <div className="flex origin-top relative justify-center w-full sm:h-fit h-[22rem] bg-gray-100 dark:bg-slate-850">
+      {/*<div className="flex origin-top relative justify-center w-full overflow-x-hidden sm:h-fit h-[22rem] bg-gray-100 dark:bg-slate-850">
         <div className="flex justify-start sm:w-[64rem] -mt-8">
           <div className="flex flex-col gap-4 w-full h-[40rem] origin-top sm:scale-100 scale-[60%] overflow-hidden p-2">
             <DayPick day={date} onChange={changeDate} />
             <Timetable lessons={timetable_example as ILesson[][]} day={date} />
           </div>
         </div>
-      </div>
+  </div>*/}
     </div>
   )
 }
