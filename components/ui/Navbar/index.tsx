@@ -37,7 +37,11 @@ export default function Navbar({ className = '' }: { className? }) {
       </button>
       <div className="flex gap-10 items-center justify-between h-full w-full max-w-5xl">
         <Link href={'/'} passHref>
-          <a>
+          <a
+            onClick={() => {
+              if (opened) setOpened(false)
+            }}
+          >
             <Logo
               className="w-40"
               variant={active || theme === 'dark' ? 'white' : 'black'}
@@ -45,7 +49,7 @@ export default function Navbar({ className = '' }: { className? }) {
           </a>
         </Link>
         <div
-          className={`sm:flex sm:relative absolute sm:top-0 top-16 w-screen h-screen sm:w-auto sm:h-auto right-0 px-6 ${
+          className={`sm:flex sm:relative absolute sm:top-0 top-16 w-screen h-screen sm:w-auto sm:h-auto right-0 px-6 py-3 sm:p-0 ${
             active
               ? 'bg-primary-700/90 backdrop-blur-sm'
               : 'bg-white dark:bg-slate-850'

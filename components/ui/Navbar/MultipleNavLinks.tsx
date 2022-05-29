@@ -24,7 +24,7 @@ export default function MultipleNavLinks({
       onMouseOver={() => setOpen(true)}
     >
       <div className="flex items-center">
-        <a className={`font-bold sm:text-lg text-2xl`}>{label}</a>
+        <a className={`font-bold sm:text-lg text-3xl`}>{label}</a>
         <Expand width={24} height={24} className="sm:block hidden" />
       </div>
       <DropdownNavLink

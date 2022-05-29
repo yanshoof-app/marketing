@@ -28,7 +28,7 @@ export default function DropdownNavLink({
     <div
       className={`${
         opened ? 'sm:flex' : 'sm:hidden'
-      } flex flex-col sm:absolute sm:top-10 sm:text-base text-lg w-36 ${
+      } flex flex-col sm:absolute sm:top-10 sm:text-base text-xl w-36 ${
         variants[variant]
       } sm:border-[2px] rounded-lg overflow-hidden sm:shadow-md`}
       onMouseLeave={() => setOpen(false)}
