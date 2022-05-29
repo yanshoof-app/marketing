@@ -7,7 +7,7 @@ const YANSHOOF_2022 = '2022 Yanshoof ©'
 
 export default function Footer() {
   return (
-    <div className="flex flex-col w-full justify-between bg-primary-600 py-8 px-20 gap-8">
+    <div className="flex flex-col w-full justify-between bg-primary-600 py-8 sm:px-20 px-8 gap-8">
       <div className="w-full flex justify-between gap-5">
         <div className="text-white hover:text-white/50">
           <Link href={GITHUB_LINK} passHref>

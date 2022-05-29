@@ -22,7 +22,9 @@ export default function PostHead({
   return (
     <div className="flex flex-col gap-6 text-center justify-center items-center py-8 border-b-[1px] border-gray-200 dark:border-gray-500 w-full">
       <div className="flex flex-col gap-4">
-        <h1 className="font-bold text-4xl dark:text-white">{title}</h1>
+        <h1 className="font-bold sm:text-4xl text-3xl dark:text-white">
+          {title}
+        </h1>
         <h2 className="text-base text-gray-500 dark:text-gray-300 font-semibold">
           {hebrewPublishDate}
         </h2>
