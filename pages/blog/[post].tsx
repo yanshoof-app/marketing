@@ -8,7 +8,7 @@ import path from 'path'
 const BlogPost = (props) => {
   return (
     props.postInfo && (
-      <Layout className="flex flex-col justify-center items-center sm:px-0 px-10 dark:text-white">
+      <Layout className="flex flex-col justify-center items-center sm:px-0 px-7 dark:text-white">
         <Navbar className="sm:border-b-[1px] border-gray-200 dark:border-gray-700" />
         <div className="flex flex-col w-full max-w-3xl gap-8">
           <PostHead {...props.postInfo} />
