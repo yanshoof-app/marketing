@@ -5,7 +5,7 @@ import Navbar from '../../components/ui/Navbar'
 import { readFileSync } from 'fs'
 import path from 'path'
 
-const BlogArticale = (props) => {
+const BlogPost = (props) => {
   return (
     props.postInfo && (
       <Layout className="flex flex-col justify-center items-center sm:px-0 px-10 dark:text-white">
@@ -20,24 +20,24 @@ const BlogArticale = (props) => {
 }
 
 export async function getStaticProps({ params }) {
-  const article = params.article
+  const postPath = params.post
 
-  const full_path = `public/blogPosts/posts/${article}`
+  const full_path = `public/blogPosts/posts/${postPath}`
 
   const POST = 'post.md'
   const post_path = path.join(full_path, POST)
   const post = readFileSync(post_path, 'utf-8')
 
-  const postInfo = require(`/public/blogPosts/posts/${article}/info.json`)
+  const postInfo = require(`/public/blogPosts/posts/${postPath}/info.json`)
 
   return { props: { post: post, postInfo: postInfo, title: postInfo.title } }
 }
 
 export async function getStaticPaths() {
   return {
-    paths: [{ params: { article: 'timetable-1.0' } }],
+    paths: [{ params: { post: 'timetable-1.0' } }],
     fallback: true,
   }
 }
 
-export default BlogArticale
+export default BlogPost
