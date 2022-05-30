@@ -24,7 +24,7 @@ export default function Navbar({ className = '' }: { className? }) {
 
   return (
     <nav
-      className={`flex sm:h-16 sticky sm:gap-0 gap-3 h-16 top-0 right-0 justify-center items-center bg-white dark:bg-slate-850 dark:text-white sm:w-full w-screen z-50 m-0 sm:p-0 px-6 ${
+      className={`flex sm:h-16 sticky sm:gap-0 gap-3 h-16 top-0 right-0 justify-center items-center bg-white dark:bg-slate-850 transition-colors dark:text-white sm:w-full w-screen z-50 m-0 sm:p-0 px-6 ${
         active && 'text-white !bg-primary-700/90 backdrop-blur-sm'
       } ${className}`}
     >
@@ -49,7 +49,7 @@ export default function Navbar({ className = '' }: { className? }) {
           </a>
         </Link>
         <div
-          className={`sm:flex sm:relative absolute sm:top-0 top-16 w-screen h-screen sm:w-auto sm:h-auto right-0 px-6 py-3 sm:p-0 ${
+          className={`sm:flex sm:relative transition-colors absolute sm:top-0 top-16 w-screen h-screen sm:w-auto sm:h-auto right-0 px-6 py-3 sm:p-0 ${
             active
               ? 'bg-primary-700/90 backdrop-blur-sm'
               : 'bg-white dark:bg-slate-850'

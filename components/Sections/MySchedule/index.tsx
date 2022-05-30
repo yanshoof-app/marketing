@@ -19,7 +19,7 @@ export default function MySchedule() {
   return (
     <div
       ref={mySchedule}
-      className="flex flex-col overflow-hidden sm:gap-16 gap-11 -mt-1 items-center justify-center w-full bg-white dark:bg-gray-900"
+      className="flex flex-col transition-colors overflow-hidden sm:gap-16 gap-11 -mt-1 items-center justify-center w-full bg-white dark:bg-gray-900"
     >
       <div className="w-full max-w-5xl flex flex-col gap-1 sm:px-0 px-6 pt-16 items-start ">
         <div className="flex flex-col gap-7 text-primary-500">
@@ -34,7 +34,7 @@ export default function MySchedule() {
           </div>
         </div>
       </div>
-      <div className="flex origin-top relative justify-center w-full sm:h-fit h-[22rem] bg-gray-100 dark:bg-slate-850">
+      <div className="flex origin-top relative justify-center w-full sm:h-fit h-[22rem] bg-gray-100 dark:bg-slate-850 transition-all">
         <div className="flex justify-start sm:w-[64rem] -translate-y-2">
           <div className="flex flex-col gap-4 w-full h-[40rem] origin-top sm:scale-100 scale-[60%] overflow-hidden p-2">
             <DayPick day={date} onChange={changeDate} />

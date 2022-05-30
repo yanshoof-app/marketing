@@ -7,7 +7,7 @@
 
 @layer base {
   body {
-    @apply bg-white dark:bg-slate-850;
+    @apply bg-white dark:bg-slate-850 transition-colors;
     direction: rtl;
   }
 

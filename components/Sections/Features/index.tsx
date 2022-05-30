@@ -62,7 +62,7 @@ const TITLE_TEXT = "עם פיצ'רים מיוחדים"
 
 export default function Features() {
   return (
-    <div className="flex flex-col items-center w-full dark:bg-slate-850 bg-white sm:gap-20 gap-16 sm:py-40 py-16">
+    <div className="flex flex-col transition-colors items-center w-full dark:bg-slate-850 bg-white sm:gap-20 gap-16 sm:py-40 py-16">
       <div className="flex flex-col sm:text-right text-center items-center sm:gap-4 gap-3">
         <h1 className="sm:text-6xl text-4xl font-extrabold text-slate-850 dark:text-white">
           {TITLE_TEXT}
