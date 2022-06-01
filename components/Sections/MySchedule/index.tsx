@@ -5,6 +5,7 @@ import { timetable_example } from '../../../samples'
 import { buildTitleGetStaticProps } from '../../DocumentHead'
 import { Calendar } from '../../icons'
 import { useRefs } from '../../RefsProvider'
+import FeatureTitle from '../Features/FeatureTItle'
 import DayPick from './DayPick'
 import Timetable from './Timetable'
 
@@ -21,19 +22,11 @@ export default function MySchedule() {
       ref={mySchedule}
       className="flex flex-col transition-colors overflow-hidden sm:gap-16 gap-11 -mt-1 items-center justify-center w-full bg-white dark:bg-gray-900"
     >
-      <div className="w-full max-w-5xl flex flex-col gap-1 sm:px-0 px-6 pt-16 items-start ">
-        <div className="flex flex-col gap-7 text-primary-500">
-          <Calendar width={60} height={60} />
-          <div className="flex flex-col items-leftgap-4 dark:text-white text-black">
-            <h1 className="sm:text-6xl text-4xl font-extrabold">
-              {MY_SCHEDULE}
-            </h1>
-            <h2 className="sm:text-2xl text-lg font-semibold dark:text-gray-300">
-              {DESCRIPTION}
-            </h2>
-          </div>
-        </div>
-      </div>
+      <FeatureTitle
+        title={MY_SCHEDULE}
+        description={DESCRIPTION}
+        icon={<Calendar width={60} height={60} />}
+      />
       <div className="flex origin-top relative justify-center w-full sm:h-fit h-[22rem] bg-gray-100 dark:bg-slate-850 transition-all">
         <div className="flex justify-start sm:w-[64rem] -translate-y-2">
           <div className="flex flex-col gap-4 w-full h-[40rem] origin-top sm:scale-100 scale-[60%] overflow-hidden p-2">
